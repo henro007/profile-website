@@ -73,3 +73,17 @@ document.querySelectorAll('.acc-btn').forEach(btn => btn.addEventListener('click
   btn.setAttribute('aria-expanded', open);
   btn.querySelector('span').textContent = open ? '\u2212' : '+';
 }));
+
+// 9. Animated number counters (count up when scrolled into view)
+const counterObs = new IntersectionObserver(entries => entries.forEach(e => {
+  if (!e.isIntersecting) return;
+  const el = e.target, end = +el.dataset.count;
+  let n = 0;
+  const timer = setInterval(() => {
+    n = Math.min(end, n + Math.max(1, Math.ceil(end / 40)));
+    el.textContent = n + (el.dataset.suffix || "");
+    if (n >= end) clearInterval(timer);
+  }, 40);
+  counterObs.unobserve(el);
+}), { threshold: .5 });
+document.querySelectorAll("[data-count]").forEach(c => counterObs.observe(c));

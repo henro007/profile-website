@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Tochukwu Olekammah</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="navbar">
+  <a class="logo" href="../index.html">Totchee</a>
+  <button class="menu-btn" aria-label="Menu">&#9776;</button>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../pages/about.html">About</a></li>
+    <li><a href="../pages/expertise.html">Expertise</a></li>
+    <li><a href="../pages/projects.html">Projects</a></li>
+    <li><a href="../pages/contact.html" class=active>Contact</a></li>
+    <li><button id="theme-toggle">Theme</button></li>
+  </ul>
+</header>
+<main>
+<div class="page">
+  <h2>Contact Me</h2>
+  <form id="contact-form" novalidate>
+    <div><input id="name" placeholder="Your name"><div class="error" id="name-err"></div></div>
+    <div><input id="email" type="email" placeholder="Your email"><div class="error" id="email-err"></div></div>
+    <div><textarea id="message" rows="5" placeholder="Your message"></textarea><div class="error" id="message-err"></div></div>
+    <button class="btn" type="submit">Send</button>
+    <div id="form-msg"></div>
+  </form>
+</div>
+</main>
+<footer>&copy; <span id="year"></span> Tochukwu Olekammah (Totchee)</footer>
+<script src="../js/script.js"></script>
+</body>
+</html>
